@@ -1,4 +1,4 @@
- ## 📋 Project UTS-Pemrograman Web
+ ## 📋 Project UTS - Pemrograman Web
 Repository ini berisikan file" dari Project UTS mata kuliah Pemrograman Web - Pemrograman Web Kelompok 2 Parallel F
 
 
