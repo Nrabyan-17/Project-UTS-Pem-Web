@@ -18,13 +18,7 @@ if (isset($_POST['email'])) {
 
     // Jika email tidak terdaftar di database, maka akan muncul alert yang memberitahukan bahwa email belum terdaftar.
     if ( $rows_email == 0 ) {
-        echo ("<script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Anda belum daftar, silahkan daftarkan akun anda terlebih dahulu!'
-                });
-            </script>");
+        $login_status = 'email_tdk_terdaftar'; // ---> Menyimpan status login ke dalam variabel $login_status untuk digunakan di sweetalert.
     } else {
         $query = "SELECT * FROM `tbl_user` WHERE email = '$email' and password = '". md5($password) ."' ";
         $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
@@ -42,25 +36,10 @@ if (isset($_POST['email'])) {
                     setCookie("email", "", time() - 3600, "/");
                 }
             }
-            echo ("<script>
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Berhasil!',
-                    text: 'Berhasil login!',
-                    timer: 1500,
-                    showConfirmButton: false
-                }).then(function() {
-                    window.location.href = 'index.php';
-                });
-            </script>"); // Jika berhasil login, maka user diarahkan ke halaman utama dari sistem.
+            $login_status = 'berhasil'; // ---> Menyimpan status login ke dalam variabel $login_status untuk digunakan di sweetalert. 
+            // Jika berhasil login, maka user diarahkan ke halaman utama dari sistem.
         } else {
-            echo ("<script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Login Gagal',
-                    text: 'Mohon maaf email atau password yang anda masukkan salah, pastikan email atau password anda benar!'
-                });
-            </script>");
+            $login_status = 'password_salah';
         }
     }
 
@@ -225,11 +204,33 @@ $remembered_email = isset($_COOKIE['email']) ? $_COOKIE['email'] : ""; // Mengam
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Kode untuk menampilkan sweetalert berdasarkan status login -->
-<!-- <script>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
-
+        <?php if ($login_status == 'email_tdk_terdaftar'): ?>
+            Swal.fire({
+                icon: 'Error',
+                title: 'Oops...',
+                text: 'Anda belum daftar, silahkan daftarkan akun anda terlebih dahulu!',
+            })
+        <?php elseif ($login_status == 'password_salah'): ?>
+            Swal.fire({
+                icon: 'Error',
+                title: 'Login Gagal',
+                text: 'Mohon maaf email atau password yang anda masukkan salah, pastikan email atau password anda benar!'
+            })
+        <?php elseif ($login_status == 'berhasil'): ?>
+            Swal.fire({
+                icon: 'Success',
+                title: 'Berhasil!',
+                text: 'Berhasil login!',
+                timer: 1500,
+                showConfirmButton: false,
+            }).then(function() {
+                window.location.href = 'index.php';
+            });
+        <?php endif; ?>
     });
-</script> -->
+</script>
 
 <!-- Menu Toggle Script -->
     <script>

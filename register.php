@@ -29,7 +29,7 @@ if (isset($_REQUEST['firstname'])) {
         
         // Untuk mengecek kalau email sudah teraftar di database
         if ($check_email_rows > 0 ) {
-            echo ("<script>alert('Email anda sudah terdaftar!')</script>");
+            $regis_status = 'terdaftar';
         } else {
             $query = "INSERT INTO `tbl_user` (nama_awal, nama_akhir, email, password, trn_date) VALUES ('$nama_awal', '$nama_akhir', '$email', '". md5($password) ."', '$trn_date')";
             $result = mysqli_query($conn, $query);
@@ -37,14 +37,14 @@ if (isset($_REQUEST['firstname'])) {
             if ($result) {
                 // window.location.href = 'login.php'; --> Untuk mengarahkan user ke halaman login setelah berhasil registrasi.
                 // alternatif dari header("Location: index.php");
-                echo ("<script> alert('Berhasil Registrasi!'); window.location.href = 'login.php'; </script>");
+                $regis_status = 'berhasil';
             } else {
-                echo ("<script>alert('terjadi kesalahan pada saat mendaftar, coba lagi')</script>");
+                $regis_status = 'gagal';
             }
         }
 
     } else {
-        echo ("<script>alert('ERROR: Tolong cek kembali password anda, pastikan password dan konfirmasi passwordnya sama!')</script>");
+        $regis_status = 'tidak_sesuai';
     }
 
 }
@@ -59,6 +59,13 @@ if (isset($_REQUEST['firstname'])) {
     <title>Halaman Registrasi</title>
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- CSS Native -->
     <style>
 body {
@@ -232,6 +239,44 @@ body {
 <!-- Bootstrap core JavaScript -->
 <script src="js/jquery.slim.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    <?php if ($regis_status == 'terdaftar'): ?>
+        Swal.fire({
+            icon: 'Error',
+            title: 'Oopss...',
+            text: 'Mohon maaf, email sudah terdaftar!'
+        });
+
+    <?php elseif ($regis_status == 'berhasil'): ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: 'Registrasi berhasil',
+        }).then(function() {
+            window.location.href = 'login.php';
+        })
+
+    <?php elseif ($regis_status == 'gagal'): ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: '',
+        });
+
+    <?php elseif ($regis_status == 'tidak_sesuai'): ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Password tidak sesuai!',
+            text: 'Mohon maaf, konfirmasi password anda tidak sesuai dengan password yang anda masukkan!',
+        });
+
+    <?php endif; ?>
+    
+</script>
 
 <!-- Croppie -->
 <script src="js/profile-picture.js"></script>
