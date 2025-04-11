@@ -11,6 +11,22 @@ Project ini dikerjakan oleh:
 - Naufal Rizki Abyan       (23082010235)
 
 
+## 🚀 Fitur wajib aplikasi:
+
+## 1. Homepage:
+- Daftar data (List/tables)
+- Filter Kategori (JavaScript)
+- Responsif (Mobile/Desktop)
+
+## 2. Form Tambah/Edit (PHP + HTML Form):
+- Validitas Client-side (JavaScript) dan Server-side (PHP)
+
+## 3. Detail data:
+- Menampilkan data lengkap
+
+## 4. Hapus data:
+- Konfirmasi penghapusan data menggunakan Pop up JavaScript modal/alert
+
 
 ## 🛠️ Tech Stack
 
