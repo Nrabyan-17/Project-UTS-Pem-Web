@@ -62,9 +62,7 @@ if (isset($_POST['save'])) {
                     $row = mysqli_fetch_assoc($result);
                     $user_profile = $target_dir . $row['profile_path'];
                 }
-
             header("Refresh: 0");
-
         }
 
     }  
@@ -84,7 +82,7 @@ if (isset($_POST['save'])) {
 
     <!-- custom styles -->
     <style>
-body{
+body {
 	background-color: #EFEFEF;
 }
 
@@ -152,16 +150,16 @@ body{
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
-.user img{
+.user img {
   padding: 10px;
 }
-.toggler{
+.toggler {
   color: #000;
   background-color: #fff;
   border: none;
   outline: none;
 }
-.sidebar-active{
+.sidebar-active {
   color: #6f42c1;
   font-weight: 500;
 }
@@ -359,24 +357,25 @@ background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, F
 
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
-                <a href="" class="list-group-item list-group-item-action"> <span data-feather="home"></span> Dashboard</a>
-                <a href="" class="list-group-item list-group-item-action"> <span data-feather="plus-circle"></span> Add Book</a>
-                <a href="" class="list-group-item list-group-item-action"> <span data-feather="file"></span> Manage Book</a>
+                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="package"></span> Product</a>
+                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
             <div class="list-group list-group-flush">
-                <a href="" class="list-group-item list-group-item-action sidebar-active"><span data-feather="user"></span> Profile</a>
-                <a href="logout.php" class="list-group-item list-group-item-action"><span data-feather="power"></span> Log out</a>
+                <a href="" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
+                <a href="logout.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="power"></span> Log out</a>
             </div>
         </div>
         <!-- /End Sidebar Content -->
 
-        <!-- Page Content -->
+        <!-- Main Page Content -->
         <div id="page-content-wrapper">
+
             <!-- Navbar Content -->
             <nav class="navbar navbar-expand-lg navbar-light border-bottom">
-                <button class="toggler" type="button" id="menu-toogle" aria-expanded="false">
+                <button class="toggler" type="button" id="menu-toggle" aria-expanded="false">
                     <span data-feather="menu"></span>
                 </button>
 
@@ -466,10 +465,14 @@ background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, F
                 </div>
             </div>
             <!-- /End tampilan ubah profil -->
-        </div>
-        <!-- /End Page Content -->
-    </div>
 
+        </div>
+        <!-- /End Main Page Content -->
+
+    </div>
+    <!-- /End Container Page Profil -->
+
+    
     <!-- Bootstrap core JavaScript -->
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -479,7 +482,7 @@ background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, F
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
+        $("#wrapper").toggleClass("toggled");
         });
     </script>
 
