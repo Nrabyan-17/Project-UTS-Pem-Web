@@ -1,8 +1,9 @@
- ## 📋 Project UTS - Pemrograman Web
+
+ # 📋 Project UTS - Pemrograman Web
 Repository ini berisikan file" dari Project UTS mata kuliah Pemrograman Web - Pemrograman Web Kelompok 2 Parallel F
 
 
-## 👥 Anggota Kelompok 2:
+## 👥 Anggota Kelompok 2
 
 Project ini dikerjakan oleh:
 
@@ -11,11 +12,35 @@ Project ini dikerjakan oleh:
 - Naufal Rizki Abyan       (23082010235)
 
 
+## 🎯 Fitur wajib aplikasi:
 
-## 🛠️ Tech Stack
+#### 1. Homepage:
+- Daftar data (List/tables)
+- Filter Kategori (JavaScript)
+- Responsif (Mobile/Desktop)
+
+#### 2. Form Tambah/Edit (PHP + HTML Form):
+- Validitas Client-side (JavaScript) dan Server-side (PHP)
+
+#### 3. Detail data:
+- Menampilkan data lengkap
+
+#### 4. Hapus data:
+- Konfirmasi penghapusan data menggunakan Pop up JavaScript modal/alert
+
+
+## 🛠️ Tech Stack:
 
 **Client:** HTML, CSS, JavaScript, Bootstrap
 
 **Server:** PHP, MySQL
+
+
+
+
+
+
+
+
 
 
