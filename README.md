@@ -12,7 +12,7 @@ Project ini dikerjakan oleh:
 - Naufal Rizki Abyan       (23082010235)
 
 
-## 🚀 Fitur wajib aplikasi:
+## 🎯 Fitur wajib aplikasi:
 
 #### 1. Homepage:
 - Daftar data (List/tables)
