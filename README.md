@@ -1,4 +1,5 @@
- ## 📋 Project UTS - Pemrograman Web
+
+ # 📋 Project UTS - Pemrograman Web
 Repository ini berisikan file" dari Project UTS mata kuliah Pemrograman Web - Pemrograman Web Kelompok 2 Parallel F
 
 
@@ -13,18 +14,18 @@ Project ini dikerjakan oleh:
 
 ## 🚀 Fitur wajib aplikasi:
 
-## 1. Homepage:
+#### 1. Homepage:
 - Daftar data (List/tables)
 - Filter Kategori (JavaScript)
 - Responsif (Mobile/Desktop)
 
-## 2. Form Tambah/Edit (PHP + HTML Form):
+#### 2. Form Tambah/Edit (PHP + HTML Form):
 - Validitas Client-side (JavaScript) dan Server-side (PHP)
 
-## 3. Detail data:
+#### 3. Detail data:
 - Menampilkan data lengkap
 
-## 4. Hapus data:
+#### 4. Hapus data:
 - Konfirmasi penghapusan data menggunakan Pop up JavaScript modal/alert
 
 
@@ -33,5 +34,13 @@ Project ini dikerjakan oleh:
 **Client:** HTML, CSS, JavaScript, Bootstrap
 
 **Server:** PHP, MySQL
+
+
+
+
+
+
+
+
 
 
