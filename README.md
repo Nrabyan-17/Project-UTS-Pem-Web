@@ -2,7 +2,7 @@
 Repository ini berisikan file" dari Project UTS mata kuliah Pemrograman Web - Pemrograman Web Kelompok 2 Parallel F
 
 
-## 👥 Anggota Kelompok 2:
+## 👥 Anggota Kelompok 2
 
 Project ini dikerjakan oleh:
 
@@ -28,7 +28,7 @@ Project ini dikerjakan oleh:
 - Konfirmasi penghapusan data menggunakan Pop up JavaScript modal/alert
 
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack:
 
 **Client:** HTML, CSS, JavaScript, Bootstrap
 
