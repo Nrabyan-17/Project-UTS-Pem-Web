@@ -15,11 +15,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for data_buku
-CREATE DATABASE IF NOT EXISTS `data_buku` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `data_buku`;
+-- Dumping database structure for excavator
+CREATE DATABASE IF NOT EXISTS `excavator` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `excavator`;
 
--- Dumping structure for table data_buku.tbl_user
+-- Dumping structure for table excavator.tbl_user
 CREATE TABLE IF NOT EXISTS `tbl_user` (
   `id_pengguna` int NOT NULL AUTO_INCREMENT,
   `nama_awal` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
@@ -31,9 +31,12 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `reset_token` varchar(255) DEFAULT NULL,
   `token_expiry` datetime DEFAULT NULL,
   PRIMARY KEY (`id_pengguna`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table data_buku.tbl_user: ~0 rows (approximately)
+-- Dumping data for table excavator.tbl_user: ~2 rows (approximately)
+INSERT INTO `tbl_user` (`id_pengguna`, `nama_awal`, `nama_akhir`, `email`, `password`, `profile_path`, `trn_date`, `reset_token`, `token_expiry`) VALUES
+	(4, 'Ilham', 'Fajriansyah', 'ilhamfaj123@gmail.com', '81b073de9370ea873f548e31b8adc081', 'default.png', '2025-04-01 22:56:05', '274f1622b9d6fa67db8b0680a972620b839d1ec84f2377a3217a0069db87d587ca0eceb0ecc7f5d39cb18534056b855b6614', '2025-04-09 13:42:54'),
+	(30, 'Ilham', 'Fajriansyah', 'ilham@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'default_profile.png', '2025-04-15 00:16:47', NULL, NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

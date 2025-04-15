@@ -88,6 +88,22 @@ body {
 	background-color: #EFEFEF;
 }
 
+/* Styling buat navbar */
+.navbar {
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.navbar-nav.ml-auto {
+    display: flex;
+    margin-left: auto !important; 
+}
+
+.navbar-collapse {
+    justify-content: flex-end; 
+}
+
+
 .input-group {
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -237,8 +253,6 @@ body {
 	background: #ED213A;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
 }
 
 .card-gradient-2{
@@ -247,8 +261,6 @@ body {
 	background: #E44D26;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #E44D26, #F16529);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #E44D26, #F16529); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
 }
 
 .card-gradient-3{
@@ -257,7 +269,6 @@ body {
 	background: #cc2b5e;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .card-gradient-4{
@@ -266,8 +277,6 @@ body {
 	background: #00B4DB;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
 }
 
 .card-gradient-5{
@@ -276,8 +285,6 @@ body {
 	background: #136a8a;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
 }
 
 .card-gradient-6{
@@ -286,8 +293,6 @@ body {
 	background: #2b5876;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
 }
 
 .card-gradient-7{
@@ -304,15 +309,14 @@ body {
 	background: #B24592;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .card-gradient-9{
 	border:none;
 	color: #ffffff;
 	background: #c94b4b;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
 }
@@ -332,15 +336,14 @@ background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, F
 	background: #EB3349;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
+
 .card-gradient-12{
 	border:none;
 	color: #ffffff;
 	background: #283048;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 } 
     </style>
 </head>
@@ -383,13 +386,13 @@ background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, F
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="">
-                            <a class="nav-link" href="index.php">Dashboard</a>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link" href="profil.php"><?php echo $username; ?></a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a href="#">
-                                <img src="" alt="">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="img img-fluid rounded-circle" src="<?php echo $user_profile; ?>" alt="foto-profil" width="25">
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labeledby="navbarDropdown">
