@@ -82,6 +82,9 @@ if (isset($_POST['save'])) {
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
     <!-- custom styles -->
     <style>
 body {
@@ -147,6 +150,8 @@ body {
     border: none;
 }
 
+
+
 .feather {
   width: 20px;
   height: 20px;
@@ -162,6 +167,13 @@ body {
 }
 .list-group-item{
   border:none;
+}
+
+/* Styling untuk submenu */
+#productSubmenu .list-group-item {
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .user {
@@ -344,7 +356,18 @@ body {
 	background: #283048;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-} 
+}
+
+/* Styling untuk rotasi ikon */
+.rotate-down {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.rotate-right {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
     </style>
 </head>
 
@@ -363,7 +386,21 @@ body {
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
                 <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="package"></span> Product</a>
+                
+                <!-- Implementasi ulang dropdown product -->
+                <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
+                    <span data-feather="package"></span> Product
+                    <span data-feather="chevron-right" style="float: right; width: 16px; height: 16px;" id="productIcon"></span>
+                </a>
+                <div id="productSubMenu" style="display: none;">
+                    <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
+                        <span data-feather="truck"></span> Excavator
+                    </a>
+                    <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
+                        <span data-feather="tool"></span> Sparepart
+                    </a>
+                </div>
+                
                 <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
             </div>
 
@@ -437,7 +474,7 @@ body {
                                     <div class="form-group">        
                                         <div class="col-md">
                                             <label for="first-name">First name</label>
-                                            <input type="text" name='first-name' class="form-control" id='first-name' placeholder="First name">
+                                            <input type="text" name='first-name' class="form-control" id='first-name' placeholder="First name" required>
                                         </div>
                                     </div>
                                 </div>
@@ -446,7 +483,7 @@ body {
                                     <div class="form-group">
                                         <div class="col-md">
                                             <label for="">last name</label>
-                                            <input type="text" class="form-control" name='last-name' id='last-name' placeholder="Last name">
+                                            <input type="text" class="form-control" name='last-name' id='last-name' placeholder="Last name" required>
                                         </div>
                                     </div>
                                 </div>
@@ -455,7 +492,7 @@ body {
                             <div class='form-group'>
                                 <div class="col-md mt-4">
                                     <label for="email">Email</label>
-                                    <input type="email" name='email' id='email' placeholder='Email Adress' class='form-control'>
+                                    <input type="email" name='email' id='email' placeholder='Email Adress' class='form-control' required>
                                 </div>
                             </div>
 
@@ -479,13 +516,14 @@ body {
 
     
     <!-- Bootstrap core JavaScript -->
-    <script src="js/jquery.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Chart.min.js"></script>
+    
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Menu Toggle Script -->
+    <!-- Script buat Burger Menu Toggle -->
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
@@ -497,7 +535,7 @@ body {
         feather.replace()
     </script>
 
-    <!-- Konfirmasi Logout Script -->
+    <!-- Script untuk Konfirmasi Logout  -->
     <script>
         function confirmLogout() {
             Swal.fire({
@@ -517,6 +555,25 @@ body {
         }
     </script>
 
+    <!-- Script untuk dropdown sidebar -->
+    <script>
+        $(document).ready(function() {
+            // Implementasi dropdown dengan toggle ikon
+            $("#productLink").click(function(e) {
+                e.preventDefault();
+                $("#productSubMenu").slideToggle("fast");
+                
+                // Toggle icon rotation between right and down
+                if ($("#productSubMenu").is(":visible")) {
+                    $("#productIcon").addClass("rotate-down").removeClass("rotate-right");
+                } else {
+                    $("#productIcon").addClass("rotate-right").removeClass("rotate-down");
+                }
+            });
+        });
+    </script>
+
+    <!-- Script untuk upload foto profil -->
     <script type="text/javascript">
         $(document).ready(function() {
 
@@ -527,14 +584,12 @@ body {
                     reader.onload = function(e) {
                         $('.avatar').attr('src', e.target.result);
                     }
-
                     reader.readAsDataURL(input.files[0]);
                 }
             }
-
             $(".file-upload").on('change', function() {
                 readURL(this);
-            });
+            });     
         });
     </script>
 
