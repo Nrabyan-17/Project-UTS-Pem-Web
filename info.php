@@ -322,7 +322,7 @@ body {
 
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                <a href="index.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
                 
                 <!-- Implementasi ulang dropdown product -->
                 <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
@@ -338,12 +338,12 @@ body {
                     </a>
                 </div>
                 
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="info.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
             <div class="list-group list-group-flush">
-                <a href="" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
+                <a href="profil.php" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
                 <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="power"></span> Log out</a>
             </div>
         </div>
