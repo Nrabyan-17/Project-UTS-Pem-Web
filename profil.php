@@ -369,6 +369,15 @@ body {
     transform: rotate(0deg);
     transition: transform 0.3s ease;
 }
+
+/* Hover effect for sidebar menu items */
+.list-group-item {
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(10px);
+}
     </style>
 </head>
 
@@ -402,7 +411,7 @@ body {
                     </a>
                 </div>
                 
-                <a href="info.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
@@ -517,7 +526,7 @@ body {
     </div>
     <!-- /End Container Page Profil -->
 
-    
+
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

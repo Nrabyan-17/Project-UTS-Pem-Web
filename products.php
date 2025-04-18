@@ -11,6 +11,16 @@
     <title>Products Page</title>
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        /* Hover effect for sidebar menu items */
+        .list-group-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .list-group-item:hover {
+            transform: translateX(10px);
+        }
+    </style>
 </head>
 <body>
         

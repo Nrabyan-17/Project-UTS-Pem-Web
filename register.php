@@ -223,11 +223,11 @@ body {
                 </div>
 
                 <div class="form-group">
-                    <label class="form-check-label"><input type="checkbox" required="required">I accept the <a href="#">Terms of use</a> &amp; <a href="#">Privacy Policy</a></label>
+                    <label class="form-check-label"><input type="checkbox" id="terms_checkbox" required="required">I accept the <a href="#">Terms of use</a> &amp; <a href="#">Privacy Policy</a></label>
                 </div>
 
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-success btn-lg btn-block">Daftar sekarang</button>
+                    <button type="submit" class="btn btn-secondary btn-lg btn-block" id="register_button" disabled>Daftar sekarang</button>
                 </div>
 
             </form>
@@ -276,6 +276,26 @@ body {
 
     <?php endif; ?>
     
+</script>
+
+<!-- Script untuk mengubah tombol sesuai status checkbox -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkbox = document.getElementById('terms_checkbox');
+        var button = document.getElementById('register_button');
+        
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                button.classList.remove('btn-secondary');
+                button.classList.add('btn-success');
+                button.disabled = false;
+            } else {
+                button.classList.remove('btn-success');
+                button.classList.add('btn-secondary');
+                button.disabled = true;
+            }
+        });
+    });
 </script>
 
 <!-- Croppie -->

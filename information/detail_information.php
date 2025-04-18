@@ -122,6 +122,7 @@ $ex = $data[$type] ?? null;
 <head>
   <meta charset="UTF-8">
   <title><?= $ex ? $ex['title'] : 'Data tidak ditemukan' ?></title>
+
   <style>
     * {
       margin: 0;
@@ -205,20 +206,25 @@ $ex = $data[$type] ?? null;
       }
     }
   </style>
+
 </head>
 <body>
   <?php if ($ex): ?>
+
     <div class="container">
       <div class="text">
         <h1><?= $ex['title'] ?></h1>
         <p><?= $ex['desc'] ?></p>
         <a class="back-link" href="information.php">&larr; Kembali ke halaman sebelumnya</a>
       </div>
+
       <div class="image">
         <img src="<?= $ex['image'] ?>" alt="<?= $ex['title'] ?>">
       </div>
     </div>
+
   <?php else: ?>
+
     <div class="container">
       <div class="text">
         <h1>Data tidak ditemukan</h1>
@@ -226,6 +232,8 @@ $ex = $data[$type] ?? null;
         <a class="back-link" href="information.php">&larr; Kembali ke halaman sebelumnya</a>
       </div>
     </div>
+
   <?php endif; ?>
+
 </body>
 </html>
