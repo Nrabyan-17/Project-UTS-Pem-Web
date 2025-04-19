@@ -9,8 +9,9 @@ include('session.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Management System - Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="css/dashboard.css">
+    <title>Book Management System - Dashboard</title>
 
     <!-- Bootstrap core css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -26,8 +27,8 @@ include('session.php');
     <main>
         <!-- Container page profil -->
         <div class="d-flex" id="wrapper">
-             <!-- Sidebar Content -->
-             <div class="border-right" id="sidebar-wrapper">
+            <!-- Sidebar Content -->
+            <div class="border-right" id="sidebar-wrapper">
                 <div class="user">
                     <img class="img img-fluid rounded-circle" src="<?php echo $user_profile; ?>" alt="foto-profil" width="120">
                     <h4><?php echo $username; ?></h4>
@@ -93,70 +94,157 @@ include('session.php');
                     </div>
                 </nav>
                 <!-- /End Navbar Content -->
-        
-                <h1>Dashboard</h1>
+
                 <!-- Dashboard -->
-                <div class="dashboard">
-                    <div class="sales">
-                        <div class="status">
-                            <div class="info">
-                                <h3>Total Sales</h3>
-                                <h1>Rp.1,000,000,000</h1>
-                            </div>
-                            <div class="progresss">
-                                <svg>
-                                    <circle cx="38" cy="38" r="36"></circle>
-                                </svg>
-                                <div class="percentage">
-                                    <p>+93%</p>
+                <div class="dashboard-container">
+                    <h1>Dashboard</h1>
+                    <div class="dashboard">
+                        <div class="sales">
+                            <div class="status">
+                                <div class="info">
+                                    <h3>Total Sales</h3>
+                                    <h1>1,000</h1>
+                                </div>
+                                <div class="progresss">
+                                    <svg>
+                                        <circle cx="38" cy="38" r="36"></circle>
+                                    </svg>
+                                    <div class="percentage">
+                                        <p>+93%</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="visits">
-                        <div class="status">
-                            <div class="info">
-                                <h3>Site Visit</h3>
-                                <h1>10,000</h1>
-                            </div>
-                            <div class="progresss">
-                                <svg>
-                                    <circle cx="38" cy="38" r="36"></circle>
-                                </svg>
-                                <div class="percentage">
-                                    <p>-21%</p>
+                        <div class="pemasukan">
+                            <div class="status">
+                                <div class="info">
+                                    <h3>Income</h3>
+                                    <h1>1,000</h1>
+                                </div>
+                                <div class="progresss">
+                                    <svg>
+                                        <circle cx="38" cy="38" r="36"></circle>
+                                    </svg>
+                                    <div class="percentage">
+                                        <p>-21%</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="searches">
-                        <div class="status">
-                            <div class="info">
-                                <h3>Searches</h3>
-                                <h1>10,000</h1>
-                            </div>
-                            <div class="progresss">
-                                <svg>
-                                    <circle cx="38" cy="38" r="36"></circle>
-                                </svg>
-                                <div class="percentage">
-                                    <p>+21%</p>
+
+                        <div class="pengeluaran">
+                            <div class="status">
+                                <div class="info">
+                                    <h3>Expenditure</h3>
+                                    <h1>1,000</h1>
+                                </div>
+                                <div class="progresss">
+                                    <svg>
+                                        <circle cx="38" cy="38" r="36"></circle>
+                                    </svg>
+                                    <div class="percentage">
+                                        <p>+21%</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--  Akhir Dashboard -->
-        </div>
 
-           
-              
+                <!-- new-user -->
+                <div class="new-user">
+                    <h2>User Lists</h2>
+                    <div class="user-list">
+                        <div class="user">
+                            <img src="photo/default_profile.png" alt="">
+                            <h2>Ishna</h2>
+                            <p>1 hours ago</p>
+                        </div>
+                        <div class="user">
+                            <img src="photo/default_profile.png" alt="">
+                            <h2>Ilham</h2>
+                            <p>1 hours ago</p>
+                        </div>
+                        <div class="user">
+                            <img src="photo/default_profile.png" alt="">
+                            <h2>Abyan</h2>
+                            <p>1 hours ago</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end new-user -->
+
+                <!-- KALO MAU NAMBAH DISINI -->
+
+            </div>
+            <!-- Right Section -->
+
+            <div class="right-section">
+                <div class="nav">
+                    <button id="menu-btn">
+                        <span class="material-icons-sharp">menu</span>
+                    </button>
+                    <div class="dark-mode">
+                        <span class="material-icons-sharp active">light_mode</span>
+                        <span class="material-icons-sharp">dark_mode</span>
+                    </div>
+                </div>
+                <!-- End of Nav -->
+
+                <div class="reminders">
+                    <div class="header">
+                        <h2>Reminders</h2>
+                        <span class="material-icons-sharp">notifications_none</span>
+                    </div>
+
+                    <div class="notification">
+                        <div class="icon">
+                            <span class="material-icons-sharp">volume_up</span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h3>Workshop</h3>
+                                <small class="text_muted">08:00 AM - 12:00 PM</small>
+                            </div>
+                            <span class="material-icons-sharp">more_vert</span>
+                        </div>
+                    </div>
+
+                    <div class="notification deactive">
+                        <div class="icon">
+                            <span class="material-icons-sharp">edit</span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h3>Workshop</h3>
+                                <small class="text_muted">08:00 AM - 12:00 PM</small>
+                            </div>
+                            <span class="material-icons-sharp">more_vert</span>
+                        </div>
+                    </div>
+
+                    <div class="notification add-reminder">
+                        <div>
+                            <span class="material-icons-sharp">add</span>
+                            <h3>Add Reminder</h3>
+                        </div>
+                    </div>
+                </div>
+            <!-- end right section -->
+        </div>
+    </main>
+
+
+
+
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Chart.min.js"></script>
-    
+
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -164,7 +252,7 @@ include('session.php');
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+            $("#wrapper").toggleClass("toggled");
         });
     </script>
 
@@ -199,7 +287,7 @@ include('session.php');
             $("#productLink").click(function(e) {
                 e.preventDefault();
                 $("#productSubMenu").slideToggle("fast");
-                
+
                 // Toggle icon rotation between right and down
                 if ($("#productSubMenu").is(":visible")) {
                     $("#productIcon").addClass("rotate-down").removeClass("rotate-right");
