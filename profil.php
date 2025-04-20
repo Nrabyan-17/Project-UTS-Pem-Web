@@ -395,7 +395,7 @@ body {
 
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
-                <a href="index.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                <a href="dashboard.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
                 
                 <!-- Implementasi ulang dropdown product -->
                 <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
@@ -411,7 +411,7 @@ body {
                     </a>
                 </div>
                 
-                <a href="information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>

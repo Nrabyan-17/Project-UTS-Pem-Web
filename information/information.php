@@ -1,5 +1,6 @@
 <?php
 include('../session.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +10,9 @@ include('../session.php');
   <title>Information Excavator</title>
 
   <!-- Bootstrap core css -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
   <!-- Feather JS for icons -->
-  <script src="js/feather.min.js"></script>
+  <script src="../js/feather.min.js"></script>
   <!-- SweetAlert2 CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
@@ -57,7 +58,7 @@ include('../session.php');
     }
 
     .main {
-      margin-left: 220px;
+      margin-left: 103px;
       padding: 30px 20px 30px 10px;
       transition: margin 0.25s ease-out;
     }
@@ -87,11 +88,22 @@ include('../session.php');
       gap: 20px;
       padding-left: 0;
       width: 100%;
+      margin-left: 0;
+      margin-right: auto;
+      justify-content: start;
     }
 
     #wrapper.toggled .grid {
       max-width: 90%;
       margin: 0 auto;
+    }
+    
+    /* Saat sidebar aktif, pengaturan grid */
+    #wrapper:not(.toggled) .grid {
+      padding-left: 10px;
+      padding-right: 50px;
+      margin-left: 0;
+      margin-right: auto;
     }
 
     .card {
@@ -442,14 +454,14 @@ include('../session.php');
     <!-- Sidebar Content -->
     <div class="border-right" id="sidebar-wrapper">
             <div class="user">
-                <img class="img img-fluid rounded-circle" src="<?php echo $user_profile; ?>" alt="foto-profil" width="120">
+                <img class="img img-fluid rounded-circle" src="../<?php echo $user_profile; ?>" alt="foto-profil" width="120">
                 <h4><?php echo $username; ?></h4>
                 <p><?php echo $email; ?></p>
             </div>
 
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
-                <a href="index.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                <a href="../dashboard.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
                 
                 <!-- Implementasi ulang dropdown product -->
                 <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
@@ -470,7 +482,7 @@ include('../session.php');
 
             <div class="sidebar-heading">Settings</div>
             <div class="list-group list-group-flush">
-                <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
+                <a href="../profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
                 <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="power"></span> Log out</a>
             </div>
         </div>
@@ -494,7 +506,7 @@ include('../session.php');
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="img img-fluid rounded-circle" src="<?php echo $user_profile; ?>" alt="foto-profil" width="25">
+                                <img class="img img-fluid rounded-circle" src="../<?php echo $user_profile; ?>" alt="foto-profil" width="25">
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labeledby="navbarDropdown">
@@ -513,50 +525,50 @@ include('../session.php');
     <!-- Card Excavator -->
     <div class="grid">
 
-      <div class="card" onclick="location.href='information/detail_information.php?type=crawler'">
-        <img src="photo/crawler.png" alt="Crawler Excavator">
+      <div class="card" onclick="location.href='detail_information.php?type=crawler'">
+        <img src="../photo/crawler.png" alt="Crawler Excavator">
         <h3>Crawler Excavator</h3>
         <p>Crawler excavator merupakan jenis excavator paling umum dan paling sering digunakan dalam berbagai proyek konstruksi berat, pertambangan, serta </p>
         <a href="detail_information.php?type=crawler">&rarr; Selengkapnya</a>
       </div>
 
-      <div class="card" onclick="location.href='information/detail_information.php?type=wheeled'">
-        <img src="photo/wheeled.png" alt="Wheeled Excavator">
+      <div class="card" onclick="location.href='detail_information.php?type=wheeled'">
+        <img src="../photo/wheeled.png" alt="Wheeled Excavator">
         <h3>Wheeled Excavator</h3>
         <p>Wheeled excavator menggunakan roda karet alih-alih rantai. Biasanya digunakan untuk proyek di area perkotaan atau lokasi konstruksi dengan</p>
         <a href="detail_information.php?type=wheeled">&rarr; Selengkapnya</a>
       </div>
 
-      <div class="card" onclick="location.href='information/detail_information.php?type=mini'">
-        <img src="photo/mini.png" alt="Mini Excavator">
+      <div class="card" onclick="location.href='detail_information.php?type=mini'">
+        <img src="../photo/mini.png" alt="Mini Excavator">
         <h3>Mini Excavator</h3>
         <p>Mini excavator adalah excavator berukuran kecil yang dirancang untuk pekerjaan di ruang terbatas atau area sempit, seperti </p>
         <a href="detail_information.php?type=mini">&rarr; Selengkapnya</a>
       </div>
 
-      <div class="card" onclick="location.href='information/detail_information.php?type=longreach'">
-        <img src="photo/longreach.png" alt="Long Reach Excavator">
+      <div class="card" onclick="location.href='detail_information.php?type=longreach'">
+        <img src="../photo/longreach.png" alt="Long Reach Excavator">
         <h3>Long Reach Excavator</h3>
         <p>Sesuai namanya, long reach excavator memiliki lengan (boom dan arm) yang jauh lebih panjang dari excavator standar. Jenis ini dirancang </p>
         <a href="detail_information.php?type=longreach">&rarr; Selengkapnya</a>
       </div>
 
-      <div class="card" onclick="location.href='information/detail_information.php?type=dragline'">
-        <img src="photo/dragline.png" alt="Dragline Excavator">
+      <div class="card" onclick="location.href='detail_information.php?type=dragline'">
+        <img src="../photo/dragline.png" alt="Dragline Excavator">
         <h3>Dragline Excavator</h3>
         <p>Dragline excavator adalah salah satu excavator terbesar dan digunakan dalam proyek skala industri, seperti tambang terbuka (open-pit mining), pembangunan pelabuhan, </p>
         <a href="detail_information.php?type=dragline">&rarr; Selengkapnya</a>
       </div>
 
-      <div class="card" onclick="location.href='information/detail_information.php?type=suction'">
-        <img src="photo/suction.png" alt="Suction Excavator">
+      <div class="card" onclick="location.href='detail_information.php?type=suction'">
+        <img src="../photo/suction.png" alt="Suction Excavator">
         <h3>Suction Excavator</h3>
         <p>Suction excavator, juga dikenal sebagai vacuum excavator, adalah alat berat yang bekerja dengan menghisap tanah atau material melalui tekanan udara tinggi. Alat ini </p>
         <a href="detail_information.php?type=suction">&rarr; Selengkapnya</a>
       </div>
 
-      <div class="card" onclick="location.href='information/detail_information.php?type=amphibious'">
-        <img src="photo/amphibious.png" alt="Amphibious Excavator">
+      <div class="card" onclick="location.href='detail_information.php?type=amphibious'">
+        <img src="../photo/amphibious.png" alt="Amphibious Excavator">
         <h3>Amphibious Excavator</h3>
         <p>Excavator jenis ini dirancang khusus untuk bekerja di medan berair, rawa, atau tanah lunak. Dilengkapi dengan ponton (struktur mengapung) sebagai </p>
         <a href="detail_information.php?type=amphibious">&rarr; Selengkapnya</a>
@@ -569,8 +581,8 @@ include('../session.php');
 
    <!-- Bootstrap core JavaScript -->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Chart.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Chart.min.js"></script>
     
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -601,7 +613,7 @@ include('../session.php');
                 cancelButtonText: 'Batal'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "logout.php";
+                    window.location.href = "../logout.php";
                 }
             });
         }

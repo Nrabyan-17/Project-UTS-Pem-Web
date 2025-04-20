@@ -219,7 +219,7 @@ $ex = $data[$type] ?? null;
       </div>
 
       <div class="image">
-        <img src="<?= $ex['image'] ?>" alt="<?= $ex['title'] ?>">
+        <img src="../<?= $ex['image'] ?>" alt="<?= $ex['title'] ?>">
       </div>
     </div>
 
