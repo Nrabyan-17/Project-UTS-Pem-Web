@@ -1,6 +1,7 @@
 <?php
 // Halaman utama (index.php)
 include('session.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -240,11 +241,12 @@ include('session.php');
 
 
 
+
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Chart.min.js"></script>
-
+   
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -252,7 +254,9 @@ include('session.php');
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
+
             $("#wrapper").toggleClass("toggled");
+
         });
     </script>
 

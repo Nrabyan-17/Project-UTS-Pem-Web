@@ -70,6 +70,7 @@ if (isset($_POST['save'])) {
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -368,6 +369,15 @@ body {
     transform: rotate(0deg);
     transition: transform 0.3s ease;
 }
+
+/* Hover effect for sidebar menu items */
+.list-group-item {
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(10px);
+}
     </style>
 </head>
 
@@ -385,7 +395,7 @@ body {
 
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                <a href="dashboard.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
                 
                 <!-- Implementasi ulang dropdown product -->
                 <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
@@ -401,7 +411,7 @@ body {
                     </a>
                 </div>
                 
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
@@ -470,6 +480,7 @@ body {
                         <p class="mt-5 mb-3"><b>Ubah nama profil</b></p>
                         <form action="" method="POST" id="registrationForm" autocomplete="off">
                             <div class="row">
+
                                 <div class="col">
                                     <div class="form-group">        
                                         <div class="col-md">
@@ -487,6 +498,7 @@ body {
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
 
                             <div class='form-group'>
@@ -514,7 +526,7 @@ body {
     </div>
     <!-- /End Container Page Profil -->
 
-    
+
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -594,4 +606,5 @@ body {
     </script>
 
 </body>
+
 </html>
