@@ -220,7 +220,7 @@ $remembered_email = isset($_COOKIE['email']) ? $_COOKIE['email'] : ""; // Mengam
                 timer: 1500,
                 showConfirmButton: false,
             }).then(function() {
-                window.location.href = 'index.php';
+                window.location.href = 'dashboard.php';
             });
         <?php endif; ?>
     });

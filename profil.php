@@ -70,6 +70,7 @@ if (isset($_POST['save'])) {
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -105,7 +106,6 @@ body {
 .navbar-collapse {
     justify-content: flex-end; 
 }
-
 
 .input-group {
     border-radius: 3px;
@@ -150,8 +150,6 @@ body {
     border: none;
 }
 
-
-
 .feather {
   width: 20px;
   height: 20px;
@@ -162,11 +160,14 @@ body {
   fill: none;
   vertical-align: text-bottom;
 }
+
 .list-group{
   background-color: #FFFFFF;
 }
+
 .list-group-item{
   border:none;
+  border-bottom: 1px solid #ddd;
 }
 
 /* Styling untuk submenu */
@@ -180,19 +181,23 @@ body {
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
+
 .user img {
   padding: 10px;
 }
+
 .toggler {
   color: #000;
   background-color: #fff;
   border: none;
   outline: none;
 }
+
 .sidebar-active {
   color: #6f42c1 !important;
   font-weight: 500;
 }
+
 .sidebar-active .feather{
 	stroke: #6f42c1;
 	font-weight: 500;
@@ -368,6 +373,15 @@ body {
     transform: rotate(0deg);
     transition: transform 0.3s ease;
 }
+
+/* Hover effect for sidebar menu items */
+.list-group-item {
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(10px);
+}
     </style>
 </head>
 
@@ -402,7 +416,7 @@ body {
                     </a>
                 </div>
                 
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
@@ -471,6 +485,7 @@ body {
                         <p class="mt-5 mb-3"><b>Ubah nama profil</b></p>
                         <form action="" method="POST" id="registrationForm" autocomplete="off">
                             <div class="row">
+
                                 <div class="col">
                                     <div class="form-group">        
                                         <div class="col-md">
@@ -488,6 +503,7 @@ body {
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
 
                             <div class='form-group'>
@@ -515,7 +531,7 @@ body {
     </div>
     <!-- /End Container Page Profil -->
 
-    
+
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -595,4 +611,5 @@ body {
     </script>
 
 </body>
+
 </html>
