@@ -23,6 +23,7 @@ include('session.php');
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -41,6 +42,7 @@ include('session.php');
                 <div class="sidebar-heading">Management</div>
                 <div class="list-group list-group-flush">
                     <a href="" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                    <a href="" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
 
                     <!-- Implementasi ulang dropdown product -->
                     <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
@@ -48,7 +50,7 @@ include('session.php');
                         <span data-feather="chevron-right" style="float: right; width: 16px; height: 16px;" id="productIcon"></span>
                     </a>
                     <div id="productSubMenu" style="display: none;">
-                        <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
+                        <a href="excavator.php" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
                             <span data-feather="truck"></span> Excavator
                         </a>
                         <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
@@ -61,6 +63,7 @@ include('session.php');
 
                 <div class="sidebar-heading">Settings</div>
                 <div class="list-group list-group-flush">
+                    <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
                     <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
                     <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="power"></span> Log out</a>
                 </div>

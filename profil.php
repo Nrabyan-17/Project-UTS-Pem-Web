@@ -403,11 +403,12 @@ body {
                 
                 <!-- Implementasi ulang dropdown product -->
                 <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
+        
                     <span data-feather="package"></span> Product
                     <span data-feather="chevron-right" style="float: right; width: 16px; height: 16px;" id="productIcon"></span>
                 </a>
                 <div id="productSubMenu" style="display: none;">
-                    <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
+                    <a href="excavator.php" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
                         <span data-feather="truck"></span> Excavator
                     </a>
                     <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">

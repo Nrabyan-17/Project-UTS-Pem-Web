@@ -1,0 +1,402 @@
+/* main product */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #111;
+    height: 100vh;
+    padding: 20px 0;
+    position: fixed;
+}
+
+.logo {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    padding: 15px 30px;
+    cursor: pointer;
+    color: #ccc;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu-item:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+.menu-item.active {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Main Content */
+.main-content {
+    width: 100%;
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    min-height: 100vh;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-tag {
+    background: #222;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.content h2 {
+    margin-bottom: 2rem;
+    color: #000;
+    font-size: 1.8rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    aspect-ratio: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.brand-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: brightness(0.9);
+}
+
+.brand-name {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+} 
+
+/* end main product */
+
+/* Styling buat navbar */
+.navbar {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    background-color: #fff;
+}
+
+.navbar-nav.ml-auto {
+    display: flex;
+    margin-left: auto !important; 
+}
+
+.navbar-collapse {
+    flex-grow: 1;
+}
+
+.input-group {
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    width: 395px;
+}
+
+.input-group-append button{
+    height: 44px;
+    border-radius: 0 1px;
+}
+
+.custom-file input[type='file'] {
+    display: none;
+}  
+
+/* .custom-file .custom-file-label {
+    position: relative;
+    left: -270px;
+    top: 7px;
+} */
+
+.custom-file-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    background: white;
+    font-size: 14px;
+    height: 40px;
+}
+
+.custom-file-label {
+    background: #e0e0e0;
+    padding: 10px 12px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.custom-file-input:active {
+    border: none;
+}
+
+.feather {
+  width: 20px;
+  height: 20px;
+  stroke: #4D4D4D;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  vertical-align: text-bottom;
+}
+.list-group{
+  background-color: #FFFFFF;
+}
+.list-group-item{
+  border:none;
+}
+
+/* Styling untuk submenu */
+#productSubmenu .list-group-item {
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.user {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+.user img {
+  padding: 10px;
+}
+.toggler {
+  color: #000;
+  background-color: #fff;
+  border: none;
+  outline: none;
+}
+.sidebar-active {
+  color: #6f42c1 !important;
+  font-weight: 500;
+}
+.sidebar-active .feather{
+	stroke: #6f42c1;
+	font-weight: 500;
+}
+
+#wrapper {
+    overflow-x: hidden;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+}
+
+.border-right {
+    border-right: 1px solid #ddd;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: 0;
+    width: 15rem;
+    flex-shrink: 0;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #999;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -15rem;
+}
+
+@media (min-width: 768px) {
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* Add Rounded Border to Card */
+.card{
+  margin-bottom: 10px;
+}
+.container-fluid{
+  margin-right: 20px;
+}
+/* Custom Gradients */
+.card-gradient-1{
+	border:none;
+	color: #ffffff;
+	background: #ED213A;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-2{
+	border:none;
+	color: #ffffff;
+	background: #E44D26;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #E44D26, #F16529);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #E44D26, #F16529); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-3{
+	border:none;
+	color: #ffffff;
+	background: #cc2b5e;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-4{
+	border:none;
+	color: #ffffff;
+	background: #00B4DB;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-5{
+	border:none;
+	color: #ffffff;
+	background: #136a8a;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-6{
+	border:none;
+	color: #ffffff;
+	background: #2b5876;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-7{
+	border:none;
+	color: #ffffff;
+	background: #6a3093;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #a044ff, #6a3093);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #a044ff, #6a3093); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-8{
+	border:none;
+	color: #ffffff;
+	background: #B24592;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-9{
+	border:none;
+	color: #ffffff;
+	background: #c94b4b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.card-gradient-10{
+	border:none;
+	color: #ffffff;
+	background: #C33764;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.card-gradient-11{
+	border:none;
+	color: #ffffff;
+	background: #EB3349;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient-12{
+	border:none;
+	color: #ffffff;
+	background: #283048;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Styling untuk rotasi ikon */
+.rotate-down {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.rotate-right {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+/* End of Styling Navbar dan Sidebar */
