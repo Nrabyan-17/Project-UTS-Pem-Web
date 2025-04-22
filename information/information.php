@@ -58,7 +58,7 @@ include('../session.php');
     }
 
     .main {
-      margin-left: 103px;
+      margin-left: 97px;
       padding: 30px 20px 30px 10px;
       transition: margin 0.25s ease-out;
     }
@@ -209,8 +209,6 @@ include('../session.php');
     border: none;
 }
 
-
-
 .feather {
   width: 20px;
   height: 20px;
@@ -221,11 +219,14 @@ include('../session.php');
   fill: none;
   vertical-align: text-bottom;
 }
+
 .list-group{
   background-color: #FFFFFF;
 }
+
 .list-group-item{
   border:none;
+  border-bottom: 1px solid #ddd;
 }
 
 /* Styling untuk submenu */
@@ -239,19 +240,23 @@ include('../session.php');
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
+
 .user img {
   padding: 10px;
 }
+
 .toggler {
   color: #000;
   background-color: #fff;
   border: none;
   outline: none;
 }
+
 .sidebar-active {
-  color: #6f42c1;
+  color: #6f42c1 !important;
   font-weight: 500;
 }
+
 .sidebar-active .feather{
 	stroke: #6f42c1;
 	font-weight: 500;
@@ -281,6 +286,7 @@ include('../session.php');
   font-weight: bold;
   text-transform: uppercase;
   color: #999;
+  
 }
 
 #sidebar-wrapper .list-group {

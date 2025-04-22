@@ -22,9 +22,12 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+      /* Reset padding/margin untuk main */
 
-main{
+main {
     margin-top: 1.4rem;
+    margin: 0;
+    padding: 0;
 }
 
 .dashboard-container {
@@ -385,9 +388,11 @@ body {
   fill: none;
   vertical-align: text-bottom;
 }
+
 .list-group{
   background-color: #FFFFFF;
 }
+
 .list-group-item{
   border:none;
 }
@@ -413,7 +418,7 @@ body {
   outline: none;
 }
 .sidebar-active {
-  color: #6f42c1;
+  color: #6f42c1 !important;
   font-weight: 500;
 }
 .sidebar-active .feather{
@@ -478,9 +483,38 @@ body {
 .card{
   margin-bottom: 10px;
 }
+
 .container-fluid{
   margin-right: 20px;
 }
+
+/* Styling untuk submenu */
+#productSubmenu .list-group-item {
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+/* Styling untuk rotasi ikon */
+.rotate-down {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.rotate-right {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for sidebar menu items */
+.list-group-item {
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(10px);
+}
+
 /* Custom Gradients */
 .card-gradient-1{
 	border:none;

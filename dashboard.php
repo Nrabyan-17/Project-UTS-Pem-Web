@@ -16,11 +16,13 @@ include('session.php');
 
     <!-- Bootstrap core css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
     <!-- Feather JS for icons -->
     <script src="js/feather.min.js"></script>
+
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -38,7 +40,7 @@ include('session.php');
 
                 <div class="sidebar-heading">Management</div>
                 <div class="list-group list-group-flush">
-                    <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                    <a href="" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
 
                     <!-- Implementasi ulang dropdown product -->
                     <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
@@ -54,12 +56,12 @@ include('session.php');
                         </a>
                     </div>
 
-                    <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                    <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
                 </div>
 
                 <div class="sidebar-heading">Settings</div>
                 <div class="list-group list-group-flush">
-                    <a href="" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
+                    <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
                     <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="power"></span> Log out</a>
                 </div>
             </div>
@@ -235,12 +237,6 @@ include('session.php');
             <!-- end right section -->
         </div>
     </main>
-
-
-
-
-
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
