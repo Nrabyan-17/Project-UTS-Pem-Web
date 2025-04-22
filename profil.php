@@ -190,7 +190,7 @@ body {
   outline: none;
 }
 .sidebar-active {
-  color: #6f42c1;
+  color: #6f42c1 !important;
   font-weight: 500;
 }
 .sidebar-active .feather{
@@ -385,15 +385,16 @@ body {
 
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                <a href="dashboard.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
                 
                 <!-- Implementasi ulang dropdown product -->
                 <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
+        
                     <span data-feather="package"></span> Product
                     <span data-feather="chevron-right" style="float: right; width: 16px; height: 16px;" id="productIcon"></span>
                 </a>
                 <div id="productSubMenu" style="display: none;">
-                    <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
+                    <a href="excavator.php" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
                         <span data-feather="truck"></span> Excavator
                     </a>
                     <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">

@@ -1,6 +1,6 @@
 <?php
 // login.php
-require('config.php');
+require('dashboard.php');
 
 session_start();
 
@@ -158,12 +158,6 @@ $remembered_email = isset($_COOKIE['email']) ? $_COOKIE['email'] : ""; // Mengam
             width: 393px;
             margin: 16px 0 9px;
             padding: 8px;
-        }
-
-        .login-form .teks-login {
-            color: #999;
-            positon: relative;
-            top: -40px;
         }
     </style>
 </head>

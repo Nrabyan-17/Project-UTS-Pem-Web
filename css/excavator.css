@@ -1,327 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-:root {
-    --color-primary: #6C9BCF;
-    --color-danger: #FF0060;
-    --color-success: #1B9C85;
-    --color-warning: #F7D060;
-    --color-white: #fff;
-    --color-info-dark: #7d8da1;
-    --color-dark: #363949;
-    --color-light: rgba(132, 139, 200, 0.18);
-    --color-dark-variant: #677483;
-    --color-background: #f6f6f9;
-
-    --card-border-radius: 2rem;
-    --border-radius-1: 0.4rem;
-    --border-radius-2: 1.2rem;
-
-    --card-padding: 1.8rem;
-    --padding-1: 1.2rem;
-
-    --box-shadow: 0 2rem 3rem var(--color-light);
-}
-
-
-main{
-    margin-top: 1.4rem;
+/* main product */
+body {
     margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: #fff;
     width: 100%;
+    display: block;
+    overflow-x: hidden;
 }
 
-.dashboard-container {
-  margin-left: 1rem; /* atau padding-left */
-  margin-right: 1rem;
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #111;
+    height: 100vh;
+    padding: 20px 0;
+    position: fixed;
 }
 
-main .dashboard{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.9rem;
+.logo {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #fff;
 }
 
-main .dashboard > div{
-    background-color: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    margin-top: 1rem;
-    box-shadow: var(--box-shadow);
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    padding: 15px 30px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    color: #ccc;
+    transition: background 0.3s, color 0.3s;
 }
 
-main .dashboard > div:hover{
-    box-shadow: none;
+.menu-item:hover {
+    background-color: #222;
+    color: #fff;
 }
 
-main .dashboard > div .status{
+.menu-item.active {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Main Content */
+.main-content {
+    width: 100%;
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    min-height: 100vh;
+    color: white;
+}
+
+.header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
-main .dashboard h3{
-    margin-left: 0.6rem;
-    font-size: 1rem;
-}
-
-main .dashboard .progresss{
-    position: relative;
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-}
-
-main .dashboard svg{
-    width: 7rem;
-    height: 7rem;
-}
-
-main .dashboard svg circle{
-    fill: none;
-    stroke-width: 10;
-    stroke-linecap: round;
-    transform: translate(5px, 5px);
-}
-
-main .dashboard .sales svg circle{
-    stroke: var(--color-success);
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .dashboard .pemasukan svg circle{
-    stroke: var(--color-danger);
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .dashboard .pengeluaran svg circle{
-    stroke: var(--color-primary);
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .dashboard .progresss .percentage{
-    position: absolute;
-    top: -3px;
-    left: -1px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-} /* Akhir Dashboard */
-
-/* New User */
-main .new-user{
-    margin-top: 1.3rem;
-    margin-left: 1rem; /* atau padding-left */
 }
 
-main .new-user .user-list{
-    background-color: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    margin-top: 1rem;
-    box-shadow: var(--box-shadow);
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1.4rem;
+.user-tag {
+    background: #222;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.content h2 {
+    margin-bottom: 2rem;
+    color: #000;
+    font-size: 1.8rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-main .new-user .user-list:hover{
-    box-shadow: none;
-}
-
-main .new-user .user-list .user{
+    aspect-ratio: 1.2;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-}
-
-main .new-user .user-list .user img{
-    width: 5rem;
-    height: 5rem;
-    margin-bottom: 0.4rem;
-    border-radius: 50%;
-}
-/* Akhir Main-User */
-
-/* right section */
-.right-section{
-    margin-top: 2rem;
-}
-
-.right-section .nav{
-    display: flex;
-    justify-content: end;
-    gap: 2rem;
-}
-
-.right-section .nav button{
-    display: none;
-}
-
-.right-section .dark-mode{
-    background-color: var(--color-light);
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 1.6rem;
-    width: 4.2rem;
-    cursor: pointer;
-    border-radius: var(--border-radius-1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.right-section .dark-mode span{
-    font-size: 1.2rem;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.right-section .dark-mode span.active{
-    background-color: var(--color-primary);
-    color: white;
-    border-radius: var(--border-radius-1);
-}
-
-.right-section .nav .profile{
-    display: flex;
-    gap: 2rem;
-    text-align: right;
-}
-
-.right-section .nav .profile .profile-photo{
-    width: 2.8rem;
-    height: 2.8rem;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.right-section .user-profile{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-top: 1rem;
-    background-color: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.right-section .user-profile:hover{
-    box-shadow: none;
-}
-
-.right-section .user-profile img{
-    width: 11rem;
+.brand-logo {
+    width: 120px;
     height: auto;
-    margin-bottom: 0.8rem;
-    border-radius: 50%;
+    margin-bottom: 1rem;
+    filter: brightness(0.9);
 }
 
-.right-section .user-profile h2{
-    margin-bottom: 0.2rem;
-}
-
-.right-section .reminders{
-    margin-top: 2rem;
-    font-size: smaller; /* Adjust font size to be smaller */
-}
-
-.right-section .reminders .header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.8rem;
-}
-
-.right-section .reminders .header span{
-    padding: 10px;
-    box-shadow: var(--box-shadow);
-    background-color: var(--color-white);
-    border-radius: 50%;
-}
-
-.right-section .reminders .notification{
-    background-color: var(--color-white);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.7rem;
-    padding: 1.4rem var(--card-padding);
-    border-radius: var(--border-radius-2);
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.right-section .reminders .notification:hover{
-    box-shadow: none;
-}
-
-.right-section .reminders .notification .content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    width: 100%;
-}
-
-.right-section .reminders .notification .icon{
-    padding: 0.6rem;
-    color: var(--color-white);
-    background-color: var(--color-success);
-    border-radius: 20%;
-    display: flex;
-}
-
-.right-section .reminders .notification.deactive .icon{
-    background-color: var(--color-danger);
-}
-
-.right-section .reminders .add-reminder{
-    background-color: var(--color-white);
-    border: 2px dashed var(--color-primary);
-    color: var(--color-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.right-section .reminders .add-reminder:hover{
-    background-color: var(--color-primary);
+.brand-name {
     color: white;
-}
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+} 
 
-.right-section .reminders .add-reminder div{
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-/* end right section */
-
-/* Styling Navbar dan Sidebar */
-body {
-	background-color: #EFEFEF;
-}
+/* end main product */
 
 /* Styling buat navbar */
 .navbar {
     padding: 0.5rem 1rem;
     width: 100%;
+    background-color: #fff;
 }
 
 .navbar-nav.ml-auto {
@@ -330,9 +134,8 @@ body {
 }
 
 .navbar-collapse {
-    justify-content: flex-end; 
+    flex-grow: 1;
 }
-
 
 .input-group {
     border-radius: 3px;
@@ -425,7 +228,9 @@ body {
 
 #wrapper {
     overflow-x: hidden;
-	background-color: #fff;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
 }
 
 .border-right {
@@ -433,12 +238,14 @@ body {
 }
 
 #sidebar-wrapper {
-  min-height: 100vh;
-  margin-left: -15rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
+    min-height: 100vh;
+    margin-left: 0;
+    width: 15rem;
+    flex-shrink: 0;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -454,25 +261,24 @@ body {
 }
 
 #page-content-wrapper {
-  min-width: 100vw;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
+  margin-left: -15rem;
 }
 
 @media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
   }
 
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
   }
 }
 
