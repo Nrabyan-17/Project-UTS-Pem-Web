@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     // Cek apakah ada upload gambar baru
     if ($_FILES["image"]["name"] != "") {
         // Handle file upload
-        $target_dir = "photo/excavators/";
+        $target_dir = "photo/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $upload_success = true;
         
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
                     name = '$name', 
                     description = '$description', 
                     price = '$price', 
-                    img_path = '$img_path' 
+                    img_path = '$image_path' 
                     WHERE id = $id";
     
     if (mysqli_query($conn, $update_query)) {
@@ -156,15 +156,15 @@ if (isset($_POST['submit'])) {
 
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                <a href="dashboard.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
 
                 <!-- Implementasi ulang dropdown product -->
-                <a href="#" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;" id="productLink">
+                <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
                     <span data-feather="package"></span> Product
                     <span data-feather="chevron-right" style="float: right; width: 16px; height: 16px;" id="productIcon"></span>
                 </a>
-                <div id="productSubMenu">
-                    <a href="crudexcavator.php" class="list-group-item list-group-item-action sidebar-active" style="padding-left: 40px; font-size: 14px;">
+                <div id="productSubMenu" style="display: none;">
+                    <a href="excavator.php" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
                         <span data-feather="truck"></span> Excavator
                     </a>
                     <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
@@ -173,6 +173,9 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="crudexcavator.php" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;">
+                    <span data-feather="plus" class="mr-2" style="font-weight: bold;"></span> Manage data
+                </a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
@@ -223,13 +226,13 @@ if (isset($_POST['submit'])) {
                     <div class="container form-container">
                         <h2 class="mb-4">Edit Excavator</h2>
                         
-                        <?php if(isset($success_message)): ?>
+                        <?php if (isset($success_message)): ?>
                             <div class="alert alert-success">
                                 <?php echo $success_message; ?>
                             </div>
                         <?php endif; ?>
                         
-                        <?php if(isset($error_message)): ?>
+                        <?php if (isset($error_message)): ?>
                             <div class="alert alert-danger">
                                 <?php echo $error_message; ?>
                             </div>
@@ -252,10 +255,10 @@ if (isset($_POST['submit'])) {
                             </div>
                             
                             <div class="form-group">
-                                <label for="image">Gambar:</label>
+                                <label for="image" style="font-weight: bold;">Gambar:</label>
                                 <div>
                                     <p>Gambar saat ini:</p>
-                                    <img src="<?php echo $excavator['image_path']; ?>" alt="<?php echo $excavator['name']; ?>" class="current-image">
+                                    <img src="<?php echo $excavator['img_path']; ?>" alt="<?php echo $excavator['name']; ?>" class="current-image">
                                 </div>
                                 <input type="file" class="form-control-file mt-2" id="image" name="image">
                                 <small class="form-text text-muted">Upload gambar baru jika ingin mengubah (format: JPG, JPEG, PNG, atau GIF)</small>
@@ -273,6 +276,7 @@ if (isset($_POST['submit'])) {
     </div>
 
     <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -288,10 +292,23 @@ if (isset($_POST['submit'])) {
         });
         
         // Product Dropdown
-        $("#productLink").click(function(e) {
-            e.preventDefault();
-            $("#productSubMenu").slideToggle();
-            $("#productIcon").toggleClass("rotate-down");
+        $(document).ready(function() {
+            $("#productLink").click(function(e) {
+                e.preventDefault();
+                $("#productSubMenu").slideToggle("fast");
+                
+                // Toggle icon rotation
+                if ($("#productSubMenu").is(":visible")) {
+                    $("#productIcon").addClass("rotate-down").removeClass("rotate-right");
+                } else {
+                    $("#productIcon").addClass("rotate-right").removeClass("rotate-down");
+                }
+            });
+            
+            // Auto-hide sidebar pada layar kecil saat halaman dimuat
+            if (window.innerWidth < 992) {
+                $("#wrapper").addClass("toggled");
+            }
         });
 
         // Fungsi konfirmasi logout

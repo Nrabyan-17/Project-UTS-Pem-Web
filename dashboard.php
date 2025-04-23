@@ -59,6 +59,7 @@ include('session.php');
                     </div>
 
                     <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                    <a href="crudexcavator.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="plus"></span> Manage data</a>
                 </div>
 
                 <div class="sidebar-heading">Settings</div>
@@ -238,6 +239,44 @@ include('session.php');
         </div>
     </main>
 
+    <!-- Tambahkan CSS untuk memperbaiki posisi right-section -->
+    <style>
+        .right-section {
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: 300px;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            overflow-y: auto;
+        }
+        
+        #page-content-wrapper {
+            width: calc(100% - 300px);
+            margin-right: 300px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .right-section {
+                width: 250px;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .right-section.active {
+                transform: translateX(0);
+            }
+            
+            #page-content-wrapper {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -252,7 +291,6 @@ include('session.php');
             e.preventDefault();
 
             $("#wrapper").toggleClass("toggled");
-
         });
     </script>
 
@@ -294,6 +332,11 @@ include('session.php');
                 } else {
                     $("#productIcon").addClass("rotate-right").removeClass("rotate-down");
                 }
+            });
+
+            // Toggle menu untuk right section pada tampilan mobile
+            $("#menu-btn").click(function() {
+                $(".right-section").toggleClass("active");
             });
         });
     </script>

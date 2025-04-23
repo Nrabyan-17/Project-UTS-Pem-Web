@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             // Insert data ke database
             $query = "INSERT INTO excavator_items (name, description, price, img_path) 
-                     VALUES ('$name', '$description', '$price', '$img_path')";
+                     VALUES ('$name', '$description', '$price', '$image_path')";
             
             if (mysqli_query($conn, $query)) {
                 $success_message = "Data excavator berhasil ditambahkan.";
@@ -120,12 +120,12 @@ if (isset($_POST['submit'])) {
                 <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
 
                 <!-- Implementasi ulang dropdown product -->
-                <a href="#" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;" id="productLink">
+                <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
                     <span data-feather="package"></span> Product
                     <span data-feather="chevron-right" style="float: right; width: 16px; height: 16px;" id="productIcon"></span>
                 </a>
-                <div id="productSubMenu">
-                    <a href="crudexcavator.php" class="list-group-item list-group-item-action sidebar-active" style="padding-left: 40px; font-size: 14px;">
+                <div id="productSubMenu" style="display: none;">
+                    <a href="excavator.php" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
                         <span data-feather="truck"></span> Excavator
                     </a>
                     <a href="" class="list-group-item list-group-item-action" style="padding-left: 40px; font-size: 14px;">
@@ -134,6 +134,9 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="crudexcavator.php" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;">
+                    <span data-feather="plus" class="mr-2" style="font-weight: bold;"></span> Manage data
+                </a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
@@ -228,7 +231,8 @@ if (isset($_POST['submit'])) {
             </main>
         </div>
     </div>
-
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- SweetAlert2 JS -->
@@ -245,10 +249,23 @@ if (isset($_POST['submit'])) {
         });
         
         // Product Dropdown
-        $("#productLink").click(function(e) {
-            e.preventDefault();
-            $("#productSubMenu").slideToggle();
-            $("#productIcon").toggleClass("rotate-down");
+        $(document).ready(function() {
+            $("#productLink").click(function(e) {
+                e.preventDefault();
+                $("#productSubMenu").slideToggle("fast");
+                
+                // Toggle icon rotation
+                if ($("#productSubMenu").is(":visible")) {
+                    $("#productIcon").addClass("rotate-down").removeClass("rotate-right");
+                } else {
+                    $("#productIcon").addClass("rotate-right").removeClass("rotate-down");
+                }
+            });
+            
+            // Auto-hide sidebar pada layar kecil saat halaman dimuat
+            if (window.innerWidth < 992) {
+                $("#wrapper").addClass("toggled");
+            }
         });
 
         // Fungsi konfirmasi logout

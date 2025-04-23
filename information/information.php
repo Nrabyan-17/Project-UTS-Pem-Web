@@ -484,6 +484,7 @@ include('../session.php');
                 </div>
                 
                 <a href="information.php" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="../crudexcavator.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="plus"></span> Manage data</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>

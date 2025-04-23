@@ -21,6 +21,7 @@ include('session.php');
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </head>
 
 <body>
@@ -53,6 +54,7 @@ include('session.php');
                 </div>
 
                 <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold; border-right: 1px solid #ddd;"> <span data-feather="info"></span> Information</a>
+                <a href="crudexcavator.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="plus"></span> Manage data</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
@@ -97,36 +99,59 @@ include('session.php');
             <!-- mainproduct -->
             <div class="main-content">
                 <section class="content">
-                    <h2>Excavator</h2>
-                    <!-- Top row with main brand cards -->
-                    <div class="card-grid">
-                        <a href="detailexcavator.php" class="card-link">
-                            <div class="card">
-                                <img src="photo/sany.jpg" alt="SANY" style="width: 100%; height: auto;">
-                                <div class="brand-name">SANY</div>
+                    <h2 class="mb-4">Excavator</h2>
+                    
+                    <!-- Responsive grid layout dengan Bootstrap -->
+                    <div class="container-fluid px-0">
+                        <div class="row">
+                            <!-- Card 1 -->
+                            <div class="col-12 col-sm-6 col-lg-3 mb-2">
+                                <a href="detailexcavator.php" class="card-link">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center d-flex flex-column justify-content-between p-3">
+                                            <img src="photo/sany.jpg" alt="SANY" class="img-fluid">
+                                            <div class="brand-name">SANY</div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-
-                        <a href="detailexcavator.php" class="card-link">
-                            <div class="card">
-                                <img src="photo/komatsu.webp" alt="KOMATSU" style="width: 95%; height: auto;">
-                                <div class="brand-name">KOMATSU</div>
+                            
+                            <!-- Card 2 -->
+                            <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                                <a href="detailexcavator.php" class="card-link">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center d-flex flex-column justify-content-between p-3">
+                                            <img src="photo/komatsu.webp" alt="KOMATSU" class="img-fluid">
+                                            <div class="brand-name">KOMATSU</div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-
-                        <a href="detailexcavator.php" class="card-link">
-                            <div class="card">
-                                <img src="photo/hitachi.png" alt="HITACHI" style="width: 67%; height: auto;">
-                                <div class="brand-name">HITACHI</div>
+                            
+                            <!-- Card 3 -->
+                            <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                                <a href="detailexcavator.php" class="card-link">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center d-flex flex-column justify-content-between p-1">
+                                            <img src="photo/hitachi.png" alt="HITACHI" class="img-fluid" >
+                                            <div class="brand-name">HITACHI</div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-
-                        <a href="detailexcavator.php" class="card-link">
-                            <div class="card">
-                                <img src="photo/kobelco_OGP.png" alt="KOBELCO" style="width: 100%; height: 86%;">
-                                <div class="brand-name">KOBELCO</div>
+                            
+                            <!-- Card 4 -->
+                            <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                                <a href="detailexcavator.php" class="card-link">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center d-flex flex-column justify-content-between">
+                                            <img src="photo/kobelco_OGP.png" alt="KOBELCO" class="img-fluid mb-3">
+                                            <div class="brand-name">KOBELCO</div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -144,9 +169,26 @@ include('session.php');
 
     <!-- Script buat Burger Menu Toggle -->
     <script>
+        // Menu toggle untuk desktop dan mobile
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
+        });
+        
+        // Auto-hide sidebar pada layar kecil saat halaman pertama dimuat
+        $(document).ready(function() {
+            if (window.innerWidth < 992) {
+                $("#wrapper").addClass("toggled");
+            }
+            
+            // Toggle sidebar saat resize window
+            $(window).resize(function() {
+                if (window.innerWidth < 992) {
+                    $("#wrapper").addClass("toggled");
+                } else {
+                    $("#wrapper").removeClass("toggled");
+                }
+            });
         });
     </script>
 
@@ -189,6 +231,12 @@ include('session.php');
                     $("#productIcon").addClass("rotate-right").removeClass("rotate-down");
                 }
             });
+            
+            // Show submenu if active menu item is inside
+            if ($("#productSubMenu .sidebar-active").length) {
+                $("#productSubMenu").show();
+                $("#productIcon").addClass("rotate-down").removeClass("rotate-right");
+            }
         });
     </script>
 

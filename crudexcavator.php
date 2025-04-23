@@ -14,7 +14,6 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Excavators</title>
-    
     <!-- Bootstrap core css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Custom CSS -->
@@ -32,6 +31,7 @@ $result = mysqli_query($conn, $query);
 <body>
     <!-- Container page -->
     <div class="d-flex" id="wrapper">
+        
         <!-- Sidebar -->
         <div class="bg-white border-right" id="sidebar-wrapper">
             <div class="user text-center py-4">
@@ -44,26 +44,30 @@ $result = mysqli_query($conn, $query);
                 <span>Management</span>
             </div>
             <div class="list-group list-group-flush">
-                <a href="dashboard.php" class="list-group-item list-group-item-action">
-                    <span data-feather="home" class="mr-2"></span> Dashboard
+                <a href="dashboard.php" class="list-group-item list-group-item-action" style="font-weight: bold;">
+                    <span data-feather="home" class="mr-2" style="font-weight: bold;"></span> Dashboard
                 </a>
 
                 <!-- Product dropdown -->
-                <a href="#" class="list-group-item list-group-item-action" id="productLink">
-                    <span data-feather="package" class="mr-2"></span> Product
+                <a href="#" class="list-group-item list-group-item-action" style="font-weight: bold;" id="productLink">
+                    <span data-feather="package" class="mr-2" style="font-weight: bold;"></span> Product
                     <span data-feather="chevron-right" style="float: right;" id="productIcon"></span>
                 </a>
                 <div id="productSubMenu" style="display: none;">
-                    <a href="excavator.php" class="list-group-item list-group-item-action bg-light" style="padding-left: 40px;">
-                        <span data-feather="truck" class="mr-2"></span> Excavator
+                    <a href="excavator.php" class="list-group-item list-group-item-action bg-light" style="padding-left: 40px; font-weight: bold;">
+                        <span data-feather="truck" class="mr-2" style="font-weight: bold;"></span> Excavator
                     </a>
-                    <a href="sparepart.php" class="list-group-item list-group-item-action bg-light" style="padding-left: 40px;">
-                        <span data-feather="tool" class="mr-2"></span> Sparepart
+                    <a href="sparepart.php" class="list-group-item list-group-item-action bg-light" style="padding-left: 40px; font-weight: bold;">
+                        <span data-feather="tool" class="mr-2" style="font-weight: bold;"></span> Sparepart
                     </a>
                 </div>
 
-                <a href="information/information.php" class="list-group-item list-group-item-action">
-                    <span data-feather="info" class="mr-2"></span> Information
+                <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;">
+                    <span data-feather="info" class="mr-2" style="font-weight: bold;"></span> Information
+                </a>
+
+                <a href="crudexcavator.php" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;">
+                    <span data-feather="plus" class="mr-2" style="font-weight: bold;"></span> Manage data
                 </a>
             </div>
 
@@ -71,10 +75,10 @@ $result = mysqli_query($conn, $query);
                 <span>Settings</span>
             </div>
             <div class="list-group list-group-flush">
-                <a href="profil.php" class="list-group-item list-group-item-action">
-                    <span data-feather="user" class="mr-2"></span> Profile
+                <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;">
+                    <span data-feather="user" class="mr-2" style="font-weight: bold;"></span> Profile
                 </a>
-                <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action">
+                <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold;">
                     <span data-feather="power" class="mr-2"></span> Log out
                 </a>
             </div>
@@ -83,6 +87,7 @@ $result = mysqli_query($conn, $query);
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
                 <button class="btn btn-link" id="menu-toggle">
@@ -126,7 +131,7 @@ $result = mysqli_query($conn, $query);
                             <div class="excavator-item card mb-3">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
-                                        <img src="<?php echo $row['image_path']; ?>" class="card-img" alt="<?php echo $row['name']; ?>">
+                                        <img src="<?php echo $row['img_path']; ?>" class="card-img" alt="<?php echo $row['name']; ?>">
                                     </div>
                                     <div class="col-md-6">
                                         <div class="card-body">
