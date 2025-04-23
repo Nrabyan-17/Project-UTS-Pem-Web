@@ -151,7 +151,7 @@ include('session.php');
                             <!-- SY75C Excavator -->
                             <div class="excavator-card">
                                 <div class="excavator-image">
-                                    <img src="photo/excavators/sy75c.jpg" alt="SANY SY75C">
+                                    <img src="photo/75CC.jpeg" alt="SANY SY75C">
                                 </div>
                                 <div class="excavator-content">
                                     <div class="excavator-header">
@@ -178,7 +178,7 @@ include('session.php');
                             <!-- SY60C Excavator -->
                             <div class="excavator-card">
                                 <div class="excavator-image">
-                                    <img src="photo/excavators/sy60c.jpg" alt="SANY SY60C">
+                                    <img src="photo/60CC.jpeg" alt="SANY SY60C">
                                 </div>
                                 <div class="excavator-content">
                                     <div class="excavator-header">
@@ -204,7 +204,7 @@ include('session.php');
                             <!-- SY55C Excavator -->
                             <div class="excavator-card">
                                 <div class="excavator-image">
-                                    <img src="photo/excavators/sy55c.jpg" alt="SANY SY55C">
+                                    <img src="photo/55CC.jpeg" alt="SANY SY55C">
                                 </div>
                                 <div class="excavator-content">
                                     <div class="excavator-header">
