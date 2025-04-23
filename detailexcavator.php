@@ -21,6 +21,40 @@ include('session.php');
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin: 20px 0;
+            color: #6c757d;
+            font-size: 16px;
+        }
+        
+        .search-bar {
+            transition: all 0.3s ease;
+            border: 1px solid #ced4da;
+        }
+        
+        .search-bar:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .reset-search {
+            margin-left: 10px;
+            padding: 4px 8px;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,14 +88,14 @@ include('session.php');
                         </a>
                     </div>
 
-                    <a href="information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> 
+                    <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> 
                         <span data-feather="info"></span> Information
                     </a>
                 </div>
 
                 <div class="sidebar-heading">Settings</div>
                 <div class="list-group list-group-flush">
-                    <a href="profile.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> 
+                    <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> 
                         <span data-feather="user"></span> Profile
                     </a>
                     <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold;"> 
@@ -82,7 +116,7 @@ include('session.php');
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                             <li class="nav-item mr-3">
-                                <a class="nav-link" href="profile.php"><?php echo $username; ?></a>
+                                <a class="nav-link" href="profile.php" style="color: #363949;"><?php echo $username; ?></a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -91,7 +125,7 @@ include('session.php');
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labeledby="navbarDropdown">
-                                    <a class="dropdown-item" href="profile.php">Your Profile</a>
+                                    <a class="dropdown-item" href="profil.php">Your Profile</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="javascript:void(0)" onclick="confirmLogout()">Logout</a>
                                 </div>
@@ -108,6 +142,9 @@ include('session.php');
                         
                         <div class="search-container">
                             <input type="text" class="search-bar" placeholder="Cari tipe excavator...">
+                            <button type="button" class="btn btn-sm btn-outline-secondary reset-search" title="Reset pencarian">
+                                <span data-feather="x"></span>
+                            </button>
                         </div>
                         
                         <div class="excavator-list">
@@ -239,6 +276,50 @@ include('session.php');
                 } else {
                     $("#productIcon").addClass("rotate-right").removeClass("rotate-down");
                 }
+            });
+
+            // Fungsi pencarian excavator
+            $(".search-bar").on("keyup", function() {
+                var searchText = $(this).val().toLowerCase();
+                
+                // Tampilkan tombol reset jika ada text di search bar
+                if(searchText.length > 0) {
+                    $(".reset-search").show();
+                } else {
+                    $(".reset-search").hide();
+                }
+                
+                $(".excavator-card").each(function() {
+                    var excavatorType = $(this).find("h2").text().toLowerCase();
+                    var excavatorDesc = $(this).find(".excavator-description").text().toLowerCase();
+                    var excavatorSpecs = $(this).find(".excavator-specs").text().toLowerCase();
+                    
+                    if (excavatorType.indexOf(searchText) > -1 || 
+                        excavatorDesc.indexOf(searchText) > -1 ||
+                        excavatorSpecs.indexOf(searchText) > -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                // Tampilkan pesan jika tidak ada hasil
+                if ($(".excavator-card:visible").length === 0) {
+                    if ($(".no-results").length === 0) {
+                        $(".excavator-list").append('<div class="no-results">Tidak ada excavator yang sesuai dengan pencarian Anda.</div>');
+                    }
+                } else {
+                    $(".no-results").remove();
+                }
+            });
+            
+            // Fungsi tombol reset pencarian
+            $(".reset-search").on("click", function() {
+                $(".search-bar").val("");
+                $(".excavator-card").show();
+                $(".no-results").remove();
+                $(this).hide();
+                feather.replace(); // Update icon feather
             });
         });
     </script>

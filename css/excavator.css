@@ -90,7 +90,7 @@ body {
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     border: none;
     cursor: pointer;
     aspect-ratio: 1.2;
@@ -103,6 +103,19 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #3a3a3a;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:hover {
+    text-decoration: none;
+    color: inherit;
 }
 
 .brand-logo {
@@ -280,6 +293,15 @@ body {
     min-width: 0;
     width: 100%;
   }
+}
+
+/* Hover effect for sidebar menu items */
+.list-group-item {
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(10px);
 }
 
 /* Add Rounded Border to Card */

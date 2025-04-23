@@ -78,6 +78,10 @@ if (isset($_POST['save'])) {
     <title>Book Management System - Profile Page</title>
     <!-- Bootstrap core css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Dashboard CSS for Dark Mode support -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Material Icons for Dark Mode Toggle -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <!-- Feather JS for icons -->
     <script src="js/feather.min.js"></script>
     <!-- SweetAlert2 CSS -->
@@ -539,6 +543,9 @@ body {
     
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Dark Mode JS -->
+    <script src="js/dark-mode.js"></script>
 
     <!-- Script buat Burger Menu Toggle -->
     <script>

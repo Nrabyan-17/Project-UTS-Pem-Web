@@ -225,6 +225,16 @@ body {
   fill: none;
   vertical-align: text-bottom;
 }
+
+/* Hover effect for sidebar menu items */
+.list-group-item {
+  transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+  transform: translateX(10px);
+}
+
 .list-group{
   background-color: #FFFFFF;
 }
@@ -253,7 +263,7 @@ body {
   outline: none;
 }
 .sidebar-active {
-  color: #6f42c1;
+  color: #6f42c1 !important;
   font-weight: 500;
 }
 

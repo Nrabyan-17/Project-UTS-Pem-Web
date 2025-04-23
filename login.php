@@ -1,6 +1,6 @@
 <?php
 // login.php
-require('dashboard.php');
+require('config.php');
 
 session_start();
 

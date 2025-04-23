@@ -36,10 +36,10 @@ include('session.php');
 
             <div class="sidebar-heading">Management</div>
             <div class="list-group list-group-flush">
-                <a href="dashboard.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
+                <a href="dashboard.php" class="list-group-item list-group-item-action" style="font-weight: bold; border-right: 1px solid #ddd;"> <span data-feather="home"></span> Dashboard</a>
 
                 <!-- Implementasi ulang dropdown product -->
-                <a href="#" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;" id="productLink">
+                <a href="#" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold; border-right: 1px solid #ddd;" id="productLink">
                     <span data-feather="package"></span> Product
                     <span data-feather="chevron-right" style="float: right; width: 16px; height: 16px;" id="productIcon"></span>
                 </a>
@@ -52,13 +52,13 @@ include('session.php');
                     </a>
                 </div>
 
-                <a href="" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="info"></span> Information</a>
+                <a href="information/information.php" class="list-group-item list-group-item-action" style="font-weight: bold; border-right: 1px solid #ddd;"> <span data-feather="info"></span> Information</a>
             </div>
 
             <div class="sidebar-heading">Settings</div>
             <div class="list-group list-group-flush">
-                <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
-                <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="power"></span> Log out</a>
+                <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold; border-right: 1px solid #ddd;"> <span data-feather="user"></span> Profile</a>
+                <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold; border-right: 1px solid #ddd;"> <span data-feather="power"></span> Log out</a>
             </div>
         </div>
         <!-- /End Sidebar Content -->
@@ -100,22 +100,33 @@ include('session.php');
                     <h2>Excavator</h2>
                     <!-- Top row with main brand cards -->
                     <div class="card-grid">
-                        <div class="card">
-                        <a href="detailexcavator.php"><img src="photo/sany.jpg" alt="SANY" style="width: 100%; height: auto;"></a>
-                            
-                        </div>
+                        <a href="detailexcavator.php" class="card-link">
+                            <div class="card">
+                                <img src="photo/sany.jpg" alt="SANY" style="width: 100%; height: auto;">
+                                <div class="brand-name">SANY</div>
+                            </div>
+                        </a>
 
-                        <div class="card">
-                            <img src="photo/komatsu.webp" alt="KOMATSU" style="width: 100%; height: auto;">
-                        </div>
+                        <a href="detailexcavator.php" class="card-link">
+                            <div class="card">
+                                <img src="photo/komatsu.webp" alt="KOMATSU" style="width: 95%; height: auto;">
+                                <div class="brand-name">KOMATSU</div>
+                            </div>
+                        </a>
 
-                        <div class="card">
-                            <img src="photo/hitachi.png" alt="HITACHI" style="width: 78%; height: auto;">
-                        </div>
+                        <a href="detailexcavator.php" class="card-link">
+                            <div class="card">
+                                <img src="photo/hitachi.png" alt="HITACHI" style="width: 67%; height: auto;">
+                                <div class="brand-name">HITACHI</div>
+                            </div>
+                        </a>
 
-                        <div class="card">
-                            <img src="photo/kobelco_OGP.png" alt="KOBELCO" style="width: 100%; height: auto;">
-                        </div>
+                        <a href="detailexcavator.php" class="card-link">
+                            <div class="card">
+                                <img src="photo/kobelco_OGP.png" alt="KOBELCO" style="width: 100%; height: 86%;">
+                                <div class="brand-name">KOBELCO</div>
+                            </div>
+                        </a>
                     </div>
                 </section>
             </div>

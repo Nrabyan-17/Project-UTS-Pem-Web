@@ -31,6 +31,7 @@ include('session.php');
     <main>
         <!-- Container page profil -->
         <div class="d-flex" id="wrapper">
+
             <!-- Sidebar Content -->
             <div class="border-right" id="sidebar-wrapper">
                 <div class="user">
@@ -41,7 +42,6 @@ include('session.php');
 
                 <div class="sidebar-heading">Management</div>
                 <div class="list-group list-group-flush">
-                    <a href="" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
                     <a href="" class="list-group-item list-group-item-action sidebar-active" style="font-weight: bold;"> <span data-feather="home"></span> Dashboard</a>
 
                     <!-- Implementasi ulang dropdown product -->
@@ -64,7 +64,6 @@ include('session.php');
                 <div class="sidebar-heading">Settings</div>
                 <div class="list-group list-group-flush">
                     <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
-                    <a href="profil.php" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="user"></span> Profile</a>
                     <a href="javascript:void(0)" onclick="confirmLogout()" class="list-group-item list-group-item-action" style="font-weight: bold;"> <span data-feather="power"></span> Log out</a>
                 </div>
             </div>
@@ -74,19 +73,20 @@ include('session.php');
             <div id="page-content-wrapper">
 
                 <!-- Navbar Content -->
-                <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+                <nav class="navbar navbar-expand-lg navbar-light border-bottom w-100">
                     <button class="toggler" type="button" id="menu-toggle" aria-expanded="false">
                         <span data-feather="menu"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                            <li class="nav-item mr-3">
-                                <a class="nav-link" href="profil.php"><?php echo $username; ?></a>
+                            
+                            <li class="nav-item mx-1">
+                                <a class="nav-link username-link" href="profil.php"><?php echo $username; ?></a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle profile-dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="img img-fluid rounded-circle" src="<?php echo $user_profile; ?>" alt="foto-profil" width="25">
                                 </a>
 
@@ -183,18 +183,12 @@ include('session.php');
 
                 <!-- KALO MAU NAMBAH DISINI -->
 
-            </div>
-            <!-- Right Section -->
-
+                <!-- Right Section -->
             <div class="right-section">
                 <div class="nav">
                     <button id="menu-btn">
                         <span class="material-icons-sharp">menu</span>
                     </button>
-                    <div class="dark-mode">
-                        <span class="material-icons-sharp active">light_mode</span>
-                        <span class="material-icons-sharp">dark_mode</span>
-                    </div>
                 </div>
                 <!-- End of Nav -->
 
@@ -236,8 +230,11 @@ include('session.php');
                             <h3>Add Reminder</h3>
                         </div>
                     </div>
+                  </div>
                 </div>
-            <!-- end right section -->
+                <!-- end right section -->
+            </div>
+
         </div>
     </main>
 
